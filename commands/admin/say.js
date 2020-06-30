@@ -13,7 +13,10 @@ module.exports = {
 			return;
 		}
 
-		if (msg.deleteable) msg.delete();
+		// Delete a message
+		msg.delete()
+  			.then(message => console.log(`Deleted message from ${message.author.username}`))
+  			.catch(console.error);
 
 		if (args.length == 0)
 			return;

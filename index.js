@@ -61,6 +61,7 @@ Bot.on('message', async msg=>{
 
 })
 
+// When somebody joins server, given them a couple default roles
 Bot.on('guildMemberAdd', async member => {
 
     var gRole = member.guild.roles.cache.find(Role => Role.name.toLowerCase().includes("games"));
