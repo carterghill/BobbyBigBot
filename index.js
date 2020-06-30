@@ -15,10 +15,12 @@ Bot.aliases = new Collection();
     require(`./handler/${handler}`)(Bot);
 });
 
+// When bot turns on
 Bot.on('ready', () => {
 
     console.log('This bot is online');
 
+    // Set the bot's status on Discord
     Bot.user.setPresence({
         status: "online",
         activity: {
@@ -31,6 +33,7 @@ Bot.on('ready', () => {
 
 Bot.on('message', async msg=>{
 
+    // If message is from the bot itself, ignore the message
     if (msg.author.bot) return;
     // if (!msg.guild) return;
     // if (!message.content.startsWith(PREFIX)) return;
