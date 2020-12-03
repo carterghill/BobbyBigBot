@@ -1,6 +1,8 @@
 # Project Files #
 #################
 bans.json
+start.bat
+start.sh
 .env
 
 # Compiled source #

@@ -30,7 +30,7 @@ module.exports = {
 
 			// Check if the user already has the role
 			if (msg.member.roles.cache.find(Role => Role.name === role)) {
-				msg.channel.send("you already have that role headass");
+				msg.channel.send("you already have that role");
 				return;
 			}
 
@@ -39,7 +39,7 @@ module.exports = {
 				gRole.permissions.has('ADMINISTRATOR') ||
 				gRole.permissions.has('MANAGE_ROLES') ||
 				gRole.permissions.has('BAN_MEMBERS') ||
-				gRole.permissions.has('MANAGE_SERVER') ||
+				//gRole.permissions.has('MANAGE_SERVER') ||
 				gRole.permissions.has('MANAGE_CHANNELS') ||
 				gRole.permissions.has('MANAGE_MESSAGES') ||
 				gRole.permissions.has('MANAGE_WEBHOOKS')) {
@@ -54,6 +54,7 @@ module.exports = {
 
 			await msg.member.roles.add(gRole.id)
 				.catch(e => msg.channel.send("I can't assign that role :("));
+
 
 			if (msg.member.roles.cache.find(Role => Role.name === role))
 				msg.channel.send("Role given :)");
